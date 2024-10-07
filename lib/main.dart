@@ -1,10 +1,10 @@
+import 'package:design_system_sample_app/Acess/Login/Login.dart';
 import 'package:flutter/material.dart';
 import '../DesignSystem/Samples/actionButtonSampleScreen/action_button_sample_screen.dart';
 import '../DesignSystem/Samples/bottomTabBarSampleScreen/bottom_tab_bar_sample_screen.dart';
 import '../DesignSystem/Samples/inputFieldSampleScreen/input_field_sample_screen.dart';
 import '../DesignSystem/Samples/linkedLabelSampleScreen/linked_label_sample_screen.dart';
 import '../DesignSystem/Samples/tabComponentSampleScreen/tab_sample_screen.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ButtonScreen(),
+      home: LoginScreen(), // Altere aqui para usar sua tela de login
     );
   }
 }
@@ -41,6 +41,7 @@ class ButtonScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              _buildButton(context, 'Login', LoginScreen()), // Novo botão para Login
               _buildButton(context, 'Action Button', ActionButtonPage()),
               _buildButton(context, 'Bottom Tab Bar', BottomTabBarPage()),
               _buildButton(context, 'Input Text Field', InputFieldPage()),

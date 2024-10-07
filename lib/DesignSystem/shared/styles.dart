@@ -84,7 +84,6 @@ const TextStyle label1Semibold = TextStyle(
 const TextStyle label2Regular = TextStyle(
   fontFamily: 'Inter',
   fontSize: 10,
-  height: 16,
   fontWeight: FontWeight.w400,
   color: normalPrimaryBaseColorLight,
 );
@@ -92,7 +91,6 @@ const TextStyle label2Regular = TextStyle(
 const TextStyle label2Semibold = TextStyle(
   fontFamily: 'Inter',
   fontSize: 10,
-  height: 16,
   fontWeight: FontWeight.w600,
   color: normalPrimaryBaseColorLight,
 );
