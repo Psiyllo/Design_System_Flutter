@@ -6,26 +6,24 @@ import 'package:design_system_sample_app/DesignSystem/Components/LinkedLabel/lin
 import 'package:design_system_sample_app/DesignSystem/Components/LinkedLabel/linked_label_view_model.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  void handleLogin() {}
+  bool isAgreed = false;
 
   void handleSignUp() {}
 
-  void handleForgotPassword() {}
+  void handleLogin() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Sign Up'),
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Container(
-        color: Colors.white, // Define o fundo como branco
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,17 +54,28 @@ class LoginScreen extends StatelessWidget {
                 togglePasswordVisibility: () {},
               ),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 16),
 
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: handleForgotPassword,
-                child: Text('Forgot Password'),
-              ),
+            Row(
+              children: [
+                Checkbox(
+                  value: isAgreed,
+                  onChanged: (bool? newValue) {
+                    isAgreed = newValue ?? false;
+                  },
+                ),
+                Text("I have read and agree to "),
+                GestureDetector(
+                  onTap: () {
+                  },
+                  child: Text(
+                    "Terms & Services",
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ],
             ),
-
-            SizedBox(height: 20),
+            SizedBox(height: 16),
 
             SizedBox(
               width: double.infinity,
@@ -75,30 +84,29 @@ class LoginScreen extends StatelessWidget {
                 viewModel: ActionButtonViewModel(
                   size: ActionButtonSize.large,
                   style: ActionButtonStyle.primary,
-                  text: 'Login',
-                  onPressed: handleLogin,
+                  text: 'Sign Up',
+                  onPressed: handleSignUp,
                 ),
               ),
             ),
-
             SizedBox(height: 150), 
 
             LinkedLabel.instantiate(
               viewModel: LinkedLabelViewModel(
-                fullText: "Don't Have An Account? ",
+                fullText: "Already Have An Account? ",
                 linkedText: 'Sign Up',
                 onLinkTap: handleSignUp,
               ),
             ),
-            SizedBox(height: 20), 
+            SizedBox(height: 20),
 
             SizedBox(
               width: 90,
               child: ElevatedButton(
                 onPressed: handleSignUp,
-                child: Text('Sign Up'),
+                child: Text('Login'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: Colors.amber, 
                   padding: EdgeInsets.symmetric(vertical: 16), 
                 ),
               ),

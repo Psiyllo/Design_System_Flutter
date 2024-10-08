@@ -1,4 +1,6 @@
-import 'package:design_system_sample_app/Acess/Login/Login.dart';
+import 'package:design_system_sample_app/Acess/Login/login.dart';
+import 'package:design_system_sample_app/Acess/Profile/profile.dart';
+import 'package:design_system_sample_app/Acess/Singup/signup.dart';
 import 'package:flutter/material.dart';
 import '../DesignSystem/Samples/actionButtonSampleScreen/action_button_sample_screen.dart';
 import '../DesignSystem/Samples/bottomTabBarSampleScreen/bottom_tab_bar_sample_screen.dart';
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(), // Altere aqui para usar sua tela de login
+      home: ButtonScreen(), 
     );
   }
 }
@@ -41,7 +43,9 @@ class ButtonScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildButton(context, 'Login', LoginScreen()), // Novo botão para Login
+              _buildButton(context, 'Profile', ProfileScreen()),
+              _buildButton(context, 'Login', LoginScreen()), 
+              _buildButton(context, 'Sign Up', SignUpScreen()), 
               _buildButton(context, 'Action Button', ActionButtonPage()),
               _buildButton(context, 'Bottom Tab Bar', BottomTabBarPage()),
               _buildButton(context, 'Input Text Field', InputFieldPage()),
@@ -63,67 +67,6 @@ class ButtonScreen extends StatelessWidget {
         );
       },
       child: Text(text),
-    );
-  }
-}
-
-// Scene Widgets
-class Scene1 extends StatelessWidget {
-  const Scene1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Scene 1')),
-      body: const Center(child: Text('Welcome to Scene 1')),
-    );
-  }
-}
-
-class Scene2 extends StatelessWidget {
-  const Scene2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Scene 2')),
-      body: const Center(child: Text('Welcome to Scene 2')),
-    );
-  }
-}
-
-class Scene3 extends StatelessWidget {
-  const Scene3({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Scene 3')),
-      body: const Center(child: Text('Welcome to Scene 3')),
-    );
-  }
-}
-
-class Scene4 extends StatelessWidget {
-  const Scene4({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Scene 4')),
-      body: const Center(child: Text('Welcome to Scene 4')),
-    );
-  }
-}
-
-class Scene5 extends StatelessWidget {
-  const Scene5({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Scene 5')),
-      body: const Center(child: Text('Welcome to Scene 5')),
     );
   }
 }
